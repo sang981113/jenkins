@@ -6,14 +6,14 @@ import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
 
-public class QuadrilateralUtilTest {
+public class QuadrilateralTest {
 	@Test
 	void getPerimeterTest() {
 		QuadrilateralUtil mockedQuadUtil = mock(QuadrilateralUtil.class);
 		when(mockedQuadUtil.calculatePerimeter(2, 3, 4, 5)).thenReturn(14);
 		Quadrilateral quad = new Quadrilateral(2, 3, 4, 5);
 		quad.setQuadUtil(mockedQuadUtil);
-		assertEquals(14, quad.getPerimeter());
+		assertEquals(13, quad.getPerimeter());
 	}
 	
 	@Test

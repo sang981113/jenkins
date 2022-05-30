@@ -4,8 +4,6 @@ public class Quadrilateral {
 	int side1, side2, side3, side4;
 	QuadrilateralUtil quadUtil;
 	
-	public Quadrilateral() {}
-	
 	public Quadrilateral(int s1, int s2, int s3, int s4) {
 		side1 = s1;
 		side2 = s2;
