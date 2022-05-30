@@ -16,18 +16,18 @@ public class Triangle
 		side3 = s3;
 	}
 
-//	public Triangle setSideLengths(int s1, int s2, int s3)
-//	{
-//		side1 = s1;
-//		side2 = s2;
-//		side3 = s3;
-//		return this;
-//	}
-//
-//	public String getSideLengths()
-//	{
-//		return side1 + "," + side2 + "," + side3;
-//	}
+	public Triangle setSideLengths(int s1, int s2, int s3)
+	{
+		side1 = s1;
+		side2 = s2;
+		side3 = s3;
+		return this;
+	}
+
+	public String getSideLengths()
+	{
+		return side1 + "," + side2 + "," + side3;
+	}
 
 	public int getPerimeter()
 	{  
@@ -90,27 +90,4 @@ public class Triangle
 		}
 		return false;
 	}
-
-//	public static void main(String[] args)
-//	{
-//		Triangle triangle = null;
-//		try
-//		{
-//			triangle = new Triangle(
-//					Integer.parseInt(args[0]),
-//					Integer.parseInt(args[1]),
-//					Integer.parseInt(args[2]));
-//		}
-//		catch (Exception e)
-//		{
-//			System.out.println(
-//				"Usage: java Quadrangle <side1:int> <side2:int> <side3:int>");
-//			return;
-//		}
-//		System.out.println("Type: " + triangle.classify());
-//		System.out.println("Triangle sides: " + triangle.getSideLengths());
-//		System.out.println("Area: " + triangle.getArea());
-//		System.out.println("Perimeter: " + triangle.getPerimeter());
-//	}
-
 }
