@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ko"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Triangle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lib</a> &gt; <a href="index.source.html" class="el_package">jenkinsTest</a> &gt; <span class="el_source">Triangle.java</span></div><h1>Triangle.java</h1><pre class="source lang-java linenums">package jenkinsTest;
+
+public class Triangle
+{
+	private int side1, side2, side3;
+	private static final String P_EQUILATERAL = &quot;equilateral&quot;;
+	private static final String P_ISOSCELES   = &quot;isosceles&quot;;
+	private static final String P_RIGHTANGLED = &quot;right-angled&quot;;
+	private static final String P_SCALENE     = &quot;scalene&quot;;
+	private static final String P_IMPOSSIBLE  = &quot;impossible&quot;;
+
+	public Triangle(int s1, int s2, int s3)
+<span class="fc" id="L13">	{</span>
+<span class="fc" id="L14">		side1 = s1;</span>
+<span class="fc" id="L15">		side2 = s2;</span>
+<span class="fc" id="L16">		side3 = s3;</span>
+<span class="fc" id="L17">	}</span>
+
+	public Triangle setSideLengths(int s1, int s2, int s3)
+	{
+<span class="nc" id="L21">		side1 = s1;</span>
+<span class="nc" id="L22">		side2 = s2;</span>
+<span class="nc" id="L23">		side3 = s3;</span>
+<span class="nc" id="L24">		return this;</span>
+	}
+
+	public String getSideLengths()
+	{
+<span class="nc" id="L29">		return side1 + &quot;,&quot; + side2 + &quot;,&quot; + side3;</span>
+	}
+
+	public int getPerimeter()
+	{  
+<span class="fc" id="L34">		return side1 + side2 + side3;</span>
+	}
+
+	public double getArea()
+	{
+<span class="fc bfc" id="L39" title="All 2 branches covered.">		if (!isImpossible())</span>
+		{
+<span class="fc" id="L41">			return Math.sqrt(getPerimeter()</span>
+			/ 2
+<span class="fc" id="L43">			* (getPerimeter() / 2 - side1)</span>
+<span class="fc" id="L44">			* (getPerimeter() / 2 - side2)</span>
+<span class="fc" id="L45">			* (getPerimeter() / 2 - side3));</span>
+		}
+<span class="fc" id="L47">		return -1;</span>
+	}
+
+	public String classify()
+	{
+<span class="fc bfc" id="L52" title="All 2 branches covered.">		if (isImpossible())</span>
+		{
+<span class="fc" id="L54">			return P_IMPOSSIBLE;</span>
+		}
+
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		if (side1 == side2)</span>
+		{
+<span class="fc bfc" id="L59" title="All 2 branches covered.">			if (side2 == side3)</span>
+			{
+<span class="fc" id="L61">				return P_EQUILATERAL;</span>
+			}
+			else
+			{
+<span class="fc" id="L65">				return P_ISOSCELES;</span>
+			}
+		}
+
+<span class="fc bfc" id="L69" title="All 2 branches covered.">		if (isRightAngled())</span>
+		{
+<span class="fc" id="L71">			return P_RIGHTANGLED;</span>
+		}
+
+<span class="fc" id="L74">		return P_SCALENE;</span>
+	}
+
+	public boolean isRightAngled()
+	{
+<span class="fc" id="L79">		int[] sides = new int[] { side1, side2, side3 };</span>
+
+<span class="fc" id="L81">		return sides[2]</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">			== Math.sqrt((long) sides[0] * sides[0] + (long) sides[1] * sides[1]);</span>
+	}
+
+	public boolean isImpossible()
+	{
+<span class="fc bfc" id="L87" title="All 6 branches covered.">		if (side1 &lt;= 0 || side2 &lt;= 0 || side3 &lt;= 0)</span>
+		{
+<span class="fc" id="L89">			return true;</span>
+		}
+<span class="fc" id="L91">		return false;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
