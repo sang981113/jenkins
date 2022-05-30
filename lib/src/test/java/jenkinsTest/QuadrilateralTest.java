@@ -13,7 +13,7 @@ public class QuadrilateralTest {
 		when(mockedQuadUtil.calculatePerimeter(2, 3, 4, 5)).thenReturn(14);
 		Quadrilateral quad = new Quadrilateral(2, 3, 4, 5);
 		quad.setQuadUtil(mockedQuadUtil);
-		assertEquals(13, quad.getPerimeter());
+		assertEquals(14, quad.getPerimeter());
 	}
 	
 	@Test
@@ -34,3 +34,4 @@ public class QuadrilateralTest {
 		assertEquals("rectangle", quad.getKind());
 	}
 }
+

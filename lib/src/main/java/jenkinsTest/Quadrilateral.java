@@ -25,3 +25,4 @@ public class Quadrilateral {
 		return quadUtil.classify(side1, side2, side3, side4);
 	}
 }
+
